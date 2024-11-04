@@ -14,20 +14,22 @@ struct ProfileMenuView: View {
                 Color(red: 0.95, green: 0.95, blue: 0.95)
                     .edgesIgnoringSafeArea(.all)
                 
-                VStack {
-                    ProfileCard()
-                        .padding(.top, 40)
-                    
-                    HStack {
-                        MyFitnessButton()
-                        Settings()
+                ScrollView {
+                    VStack {
+                        ProfileCard()
+                            .padding(.top, 40)
+                        
+                        HStack {
+                            MyFitnessButton()
+                            Settings()
+                        }
+                        
+                        AchievementDisplay()
+                            .padding()
+                            .shadow(radius: 1)
+                        
+                        Spacer()
                     }
-    
-                    AchievementDisplay()
-                        .padding()
-                        .shadow(radius: 1)
-                    
-                    Spacer()
                 }
             }
         }

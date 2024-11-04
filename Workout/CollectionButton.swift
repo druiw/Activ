@@ -11,7 +11,6 @@ struct CollectionButton: View {
     @State private var isExpanded = false
     
     var body: some View {
-        ScrollView {
             VStack {
                 Button(action: {
                     isExpanded.toggle()
@@ -19,14 +18,13 @@ struct CollectionButton: View {
                     HStack {
                         Image(systemName: "square.on.square")
                             .foregroundColor(.black)
-                        Text("My Collection")
+                        Text("My Workouts")
                             .foregroundColor(.black)
                         Spacer()
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.forward")
                             .foregroundColor(.black)
                     }
                     .padding()
-
                     .cornerRadius(10)
                     .shadow(radius: 2)
                 }
@@ -43,7 +41,6 @@ struct CollectionButton: View {
             }
             .animation(.easeInOut, value: isExpanded)
             .padding() // Ensure there’s some padding around the entire content
-        }
         .background(Color(red: 0.95, green: 0.95, blue: 0.95)) // Helps to see the scroll view area
     }
 }
